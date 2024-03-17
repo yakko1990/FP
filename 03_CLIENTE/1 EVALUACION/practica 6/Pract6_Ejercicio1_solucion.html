@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Practica 6_Ejercicio1</title>
+</head>
+<body>
+	<form name="formulario">
+		<input type="button" value="1"/>
+		<input type="button" value="2"/>
+		<input type="button" value="3"/><br/>
+		<input type="button" value="4"/>
+		<input type="button" value="5"/>
+		<input type="button" value="6"/><br/>
+		<input type="button" value="7"/>
+		<input type="button" value="8"/>
+		<input type="button" value="9"/><br/>
+	</form>
+</body>
+<script type="text/javascript">
+	let codigoValido = "46782"
+	let codigo = "";
+
+	function pulsar(evento) {
+		evento = evento || window.event;
+		var objetivo = evento.target || evento.srcElement;
+		if (objetivo.type == "button") {
+			codigo += objetivo.value;
+			if (codigo.length == 5) {
+				if (codigo == codigoValido) {
+					alert("Código introducido correcto");
+				} else {
+					alert("Código introducido incorrecto");
+				}
+				codigo = ""; //Vacío el código introducido
+			}
+
+		}
+	}
+
+	window.onload = function() {
+		if (document.addEventListener) {
+			document.formulario.addEventListener("click", pulsar);
+		} else {
+			document.formulario.attachEvent("onclick", pulsar);
+		}
+	}
+</script>
+</html>

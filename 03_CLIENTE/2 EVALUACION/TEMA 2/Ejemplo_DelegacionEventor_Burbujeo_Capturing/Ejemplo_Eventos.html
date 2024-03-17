@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tarea 3.1</title>
+</head>
+<body>
+	<form action="" name="formulario">
+        <p> <input type="button" name="boton" value="Probar"/> </p>
+		
+	</form>
+	<div id="eventos">
+        <h2 id="texto"></h2>
+    </div>
+</body>
+<script type="text/javascript">
+	function eventoRaton(evento) {
+		event.preventDefault(); //Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento 
+		var tipo = evento.type;
+
+        document.getElementById("texto").innerHTML += tipo ;
+       
+	}
+	//document.addEventListener("DOMContentLoaded", () =>{}); HACE LO MISMO QUE WINDOW.ONLOAD 
+	window.onload = function() {
+		/* Añadimos los eventos al botón */
+		document.formulario.boton.addEventListener('mousedown', eventoRaton);
+		document.formulario.boton.addEventListener('mouseup', eventoRaton);
+		document.formulario.boton.addEventListener('click', eventoRaton);
+		document.formulario.boton.addEventListener('contextmenu', eventoRaton);
+        document.formulario.boton.addEventListener('dblclick', eventoRaton);
+        
+        //Controlar los eventos del teclado
+        document.onkeypress = function(evento) {
+	
+            console.log("KeyCode"+evento.keyCode);
+            console.log("CharCode"+evento.charCode);
+    }
+}
+</script>
+</html>

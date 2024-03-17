@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos DOM Javascript</title>
+	<style>
+		body,html{
+			height: 100%;
+			margin: 0;
+		}
+
+		.container,.element-1,.element-2{
+			align-items: center;
+			display: flex;
+			justify-content: center;
+		}
+
+		.container{
+		   background-color: #004d40 ;
+		   height: 100%;
+		   position: relative;
+		   width: 100%;
+		 }
+
+		 .element-1{
+		   background-color: blue ;
+		   width: 600px;
+		   height: 600px;
+		 }
+
+		 .element-2{
+			background-color: red;
+			width: 350px;
+			height: 350px;
+		 }
+
+		 .element-3{
+			 background-color: yellow ;
+			 width: 175px;
+			 height: 175px;
+		 }
+	</style>
+</head>
+<body>
+	<div class="container">
+      <div id="element-1" class="element-1">
+          <div id="element-2" class="element-2">
+              <div id="element-3" class="element-3">
+
+              </div>
+          </div>
+      </div>
+</div>
+</body>
+<script type="text/javascript">
+/*Los eventos en modo de captura se procesan en el sentido div1 -> div2 -> div3, 
+mientras que los eventos en modo bubbling se procesan en sentido contrario
+*/
+
+/* En JavaScript 'event.target' se utiliza en eventos y se refiere al elemento HTML específico que ha desencadenado 
+el evento. 
+'event.target' – es el elemento “objetivo” que inició el evento, no cambia a través de todo el proceso de propagación. 
+'this' – es el elemento “actual”, el que tiene un manejador ejecutándose en el momento.
+*/
+/*Modo burbuja. Evento Bubbling es un concepto en el DOM (Modelo de Objeto del Documento). 
+Sucede cuando un elemento recibe un evento, y ese evento burbujea (o puedes decir que es transmitido o propagado) a sus elementos, padres y ancestros en el árbol del DOM hasta que llega al elemento raíz.
+Este es el comportamiento por defecto de los eventos en los elementos a menos que detengas la propagación 'stopPropagation'
+*/
+
+(function(){
+			console.log("Modo burbuja");
+            //Evento click para el objeto objeto menos interno, es decir, el div con id = element-1
+            let element1 = document.querySelector('#element-1');
+            element1.addEventListener('click',function(e){
+				
+                console.log("Objeto que desencadena el evento " + e.target.id);
+				console.log("Objeto que ejecuta la acción " + this.id);
+            },false);
+
+            //Evento click para el objeto objeto medio, es decir, el div con id = element-2
+            let element2 = document.querySelector('#element-2');
+            element2.addEventListener('click',function(e){
+				
+                console.log("Objeto que desencadena el evento " + e.target.id);
+				console.log("Objeto que ejecuta la acción " + this.id);
+            },false);
+			
+            //Evento click para el objeto objeto mas interno, es decir, el div con id = element-3
+            let element3 = document.querySelector('#element-3');
+            element3.addEventListener('click',function(e){
+				
+                console.log("Objeto que desencadena el evento " + e.target.id);
+				console.log("Objeto que ejecuta la acción " + this.id);
+            },false);
+        })();
+	
+	//Modo captura
+	/*(function(){
+		
+		console.log("Modo captura");
+		//Evento click para el objeto objeto menos interno, es decir, el div con id = element-1
+		let element1 = document.querySelector('#element-1');
+		element1.addEventListener('click',function(e){
+			
+			console.log("Objeto que desencadena el evento " + e.target.id);
+			console.log("Objeto que ejecuta la acción " + this.id);
+		},true);
+
+		//Evento click para el objeto objeto medio, es decir, el div con id = element-2
+		let element2 = document.querySelector('#element-2');
+		element2.addEventListener('click',function(e){
+			
+			console.log("Objeto que desencadena el evento " + e.target.id);
+			console.log("Objeto que ejecuta la acción " + this.id);
+		},true);
+
+		//Evento click para el objeto objeto mas interno, es decir, el div con id = element-3
+		let element3 = document.querySelector('#element-3');
+		element3.addEventListener('click',function(e){
+			
+			console.log("Objeto que desencadena el evento " + e.target.id);
+			console.log("Objeto que ejecuta la acción " + this.id);
+		},true);
+	})();*/
+
+</script>
+</html>

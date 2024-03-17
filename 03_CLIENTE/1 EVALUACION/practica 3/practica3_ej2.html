@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 3</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        /* 2. Ejercicio2: Escribir un programa que lea 10 números de teclado, los almacene en un array llamado
+        numeros, y los escriba en orden inverso al que fueron introducidos. La entrada por teclado se hará
+        con la orden prompt(). 
+        Debes resolverlo mediante funciones. Para invocar la función inverso, debes utilizar un parámetros
+        reset.
+        Por   ejemplo,   si   escribimos   los   números   1,2,3,4,5,6,7,8,9   y   0   la   salida   que   se   generará   será   la
+        siguiente:*/
+        
+        let numeros=[];
+
+        function inverso(){
+
+            
+            let result=[];
+
+            for (let index = 0; index <10; index++) {
+                    
+                    let numero = parseInt(prompt("Ingrese numeros por teclado"));
+                    numeros[index] = numero;
+                   
+                }    console.log(numeros);  
+                result = numeros.reverse();
+                console.log(result);
+                document.write(result);
+
+        }inverso(numeros)           
+                
+
+
+    </script>
+
+            <!--
+
+                'use strict'
+            
+        let numeros=[];  //Declaracion de array
+        let numerosReverse=[];  //Declaracion de array
+
+
+        //Solicita 10 numeros//
+
+
+        for (let i=0;i<10;i++) {
+            let numero=parseInt(prompt('Introduce el numero',0));
+            if (isNaN(numero)){
+                alert("ERROR, debes introducir un numero");
+                i--;
+            }
+            else
+                numeros[i]=numero;
+            
+        }
+        //Visualiza los numeros almacenados en el array
+        visualizar(numeros);
+
+        alReves(numeros);
+        console.log(numeros.reverse());
+        //Visualiza los numeros al revés 
+        console.log("Listado al reves");
+        visualizar(numerosReverse);
+
+        //Función que da la vuelta a un array
+        function alReves(numeros){
+            let j=0;
+            for (let i=((numeros.length)-1);i>=0;i--){
+                numerosReverse[j]=numeros[i];
+                j++;
+
+            }
+        
+        }
+
+        //Funcion que visualiza el array
+        function visualizar(lista){
+            for (let i=0;i<lista.length;i++)
+                console.log(`Numero : ${lista[i]}`);
+        }
+        -->
+    
+</body>
+</html>

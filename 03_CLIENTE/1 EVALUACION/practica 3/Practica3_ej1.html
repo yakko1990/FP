@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica 3</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        /*
+        1. Ejercicio1 Realiza un programa que pida introducir un nombre de alumno por teclado, si el nombre
+        del   alumno   existe   en   la   lista   implementada   mediante   un   array,   se   visualizará   el   mensaje
+        “Encontrado”, si no existe, se visualizará el mensaje de “No Encontrado”*/
+
+        let nombre = prompt("Ingrese el nombre del alumno");
+        let alumnos = ["Roberto", "Pedro", "Luis", "Nicolas", "Pablo", "José", "Andrés"]
+
+        function buscarAlumno(nombre, alumnos){
+            let encontrado =  false
+            for(let i = 0; i < alumnos.length; i++){
+                if(alumnos[i] == nombre){           
+                    encontrado = true;
+                }        
+            }
+            return encontrado;
+        }
+
+        if(buscarAlumno(nombre, alumnos)){
+            alert("Encontrado");    
+        }else{
+            alert("No Encontrado");
+        }
+
+    </script>
+
+    <!--Solucion
+
+        //Programa que compruebe si existe un nombre en un array
+
+        'use strict'
+            
+        let nombre = prompt('Introduce nombre, pulse Cancelar para finalizar');
+        let listaNombres=[];  //Declaracion de array
+        let i=0;
+        let nombreAencontrar="";
+
+        //Solicita nombres hasta que el usuario pulse cancelar//
+
+
+        while (nombre!=null) {
+            listaNombres[i]=nombre;
+            nombre = prompt('Introduce el nombre, pulse Cancelar para finalizar');
+            i++;
+        }
+        //Visualiza los nombres almacenados en el array
+        visualizarNombres(listaNombres);
+
+        //Función que comprueba si ha encontrado el nombre a buscar
+        function encontrado(nombre, listaNombres){
+            let encontrar=false;
+            for (let i=0;i<listaNombres.length;i++){
+                if (nombre==listaNombres[i]){
+                    console.log(nombre);
+                    encontrar=true;
+                    break;
+                }
+            }    
+            return encontrar;
+        }
+
+        const mostrar=function(){
+            if (encontrado(nombreAencontrar,listaNombres))
+                alert("El nombre de "+nombreAencontrar+ " ha sido encontrado");
+            else   alert("El nombre de "+nombreAencontrar+ " no ha sido encontrado");
+        }
+
+        //Llamada a la funcion mostrar si el array tiene elementos 
+        if (listaNombres.length>0){
+            nombreAencontrar = prompt('Introduce nombre a buscar');
+            mostrar();
+        }
+
+        //Funcion que visualiza los nombres por consola
+        function visualizarNombres(listaNombres){
+
+            for (let i=0;i<listaNombres.length;i++)
+                console.log(" "+listaNombres[i]);
+        }-->
+
+    
+</body>
+</html>

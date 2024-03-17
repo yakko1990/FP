@@ -1,0 +1,26 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(àéÕ¢
+0
+java:S1220""Move this file to a named package.
+E	java:S106"+Replace this use of System.out by a logger.(óæÃ¿øÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(Ô¸Øã
+R
+java:S1854#"7Remove this useless assignment to local variable "tlf".(©«Öðùÿÿÿÿ
+P
+java:S1854!":Remove this useless assignment to local variable "nombre".(Òç ²
+A
+java:S1172"+Remove this unused method parameter "args".(Î½ºð
+@	java:S106 "+Replace this use of System.out by a logger.(Ýïþñ
+A
+java:S1481!"+Remove this unused "nombre" local variable.(Òç ²
+E	java:S106""+Replace this use of System.out by a logger.(ýýªûûÿÿÿÿ
+C
+java:S1481#"(Remove this unused "tlf" local variable.(©«Öðùÿÿÿÿ
+E
+java:S1128
+"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ
+O
+java:S1144"4Remove this unused private "rellenarHashMap" method.(Þ«’Èøÿÿÿÿ
+N
+java:S1144"3Remove this unused private "existeContacto" method.(·žá úÿÿÿÿ

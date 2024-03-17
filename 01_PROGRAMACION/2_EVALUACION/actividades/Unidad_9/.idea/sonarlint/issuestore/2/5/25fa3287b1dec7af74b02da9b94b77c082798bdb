@@ -1,0 +1,29 @@
+
+E	java:S106"+Replace this use of System.out by a logger.(°Ê¸ùÿÿÿÿ
+M
+java:S1854."7Remove this useless assignment to local variable "nac".(ÿöŞŞ
+S
+java:S1854,"8Remove this useless assignment to local variable "nome".(£©ÓÑşÿÿÿÿ
+L
+java:S1854*"6Remove this useless assignment to local variable "a2".(££•
+L
+java:S1854("6Remove this useless assignment to local variable "a1".(²Ãæ‘
+Y
+java:S1854&">Remove this useless assignment to local variable "numAlumnos".(¦¬Ä‹úÿÿÿÿ
+A
+java:S1172!"+Remove this unused method parameter "args".(Î½ºğ
+E	java:S106%"+Replace this use of System.out by a logger.(Èíğşÿÿÿÿ
+J
+java:S1481&"/Remove this unused "numAlumnos" local variable.(¦¬Ä‹úÿÿÿÿ
+@	java:S106'"+Replace this use of System.out by a logger.(¤Ê”º
+=
+java:S1481("'Remove this unused "a1" local variable.(²Ãæ‘
+E	java:S106)"+Replace this use of System.out by a logger.(›¸ñüÿÿÿÿ
+=
+java:S1481*"'Remove this unused "a2" local variable.(££•
+E	java:S106+"+Replace this use of System.out by a logger.(­·Æ§ıÿÿÿÿ
+D
+java:S1481,")Remove this unused "nome" local variable.(£©ÓÑşÿÿÿÿ
+E	java:S106-"+Replace this use of System.out by a logger.(ıîÎşÿÿÿÿ
+>
+java:S1481."(Remove this unused "nac" local variable.(ÿöŞŞ

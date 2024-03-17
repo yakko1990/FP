@@ -1,0 +1,4 @@
+Identifica dónde se usa $_SESSION y para qué 
+1- Se almacenan mensajes de error en login.php en $_SESSION['error']
+2- $_SESSION['nombre'] para reconocer si un usuario se ha autenticado correctamente e iniciado sesión en el servidor. Está presente en login.php, cerrar.php, cesta.php, listado.php y pagar.php
+3- $_SESSION['cesta'] para almacenar los ids de los productos añadidos: Está presente en cerrar.php, cesta.php y listado.php

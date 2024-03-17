@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	<form name="formulario">
+		<textarea name="texto" cols="40" rows="10"></textarea><br/>
+		<input type="button" name="h1" value="h1"/>
+		<input type="button" name="h2" value="h2"/>
+		<input type="button" name="h3" value="h3"/>
+		<input type="button" name="h4" value="h4"/>
+		<input type="button" name="h5" value="h5"/>
+		<input type="button" name="h6" value="h6"/>
+		<input type="button" name="p" value="p"/>
+	</form>
+	<div id="resultado">
+		
+	</div>
+</body>
+<script type="text/javascript">
+	function creaElementoConTexto(elemento, texto, padre) {
+		var nodoTexto = document.createTextNode(texto);
+		var nodoEtiqueta = document.createElement(elemento);
+		nodoEtiqueta.appendChild(nodoTexto);
+		padre.appendChild(nodoEtiqueta);
+		return nodoEtiqueta;
+	}
+
+	function creaBoton (valor, manejador, padre) {
+		var boton = document.createElement("input");
+		boton.type = "button";
+		boton.value = valor;
+		boton.addEventListener("click", manejador);
+		padre.appendChild(boton);
+	}
+
+	function anhadir () {
+		console.log(this);
+		var etiqueta = this.value;
+		var texto = document.formulario.texto.value;
+		var resultado = document.getElementById("resultado");
+
+		var elemento = creaElementoConTexto(etiqueta,texto, resultado);
+
+		creaBoton("Eliminar", elimina, elemento);
+
+		document.formulario.texto.value = "";
+	}
+
+	function elimina () {
+		this.parentNode.parentNode.removeChild(this.parentNode);
+	}
+
+	
+
+	window.onload = function() {
+		var botones = document.getElementsByTagName("input");
+		for (var i = 0; i < botones.length; i++) {
+			botones[i].addEventListener("click", anhadir);
+		}
+
+		//Asignar manejador de eventos por delegacion
+		document.getElementById('resultado').addEventListener('click',cambiarColor);
+	}
+</script>
+</html>

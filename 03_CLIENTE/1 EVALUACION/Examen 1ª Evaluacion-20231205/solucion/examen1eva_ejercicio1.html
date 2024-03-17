@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejercicio 2</title>
+  <style type="text/css">
+    .caja {
+      width: 20px;
+      height: 20px;
+      float: left;
+      margin: 5px;
+      background: rgb(74, 74, 75);
+      bottom: auto;
+      color: white;
+      display: flex;
+      align-items: center;
+      /*Alinear verticalmente con flex*/
+      justify-content: center;
+      /*Alinear horizontalmente con flex*/
+      font-size: 20px;
+    }
+
+    .seccion {
+      width: 400px;
+      height: 10px;
+      margin: 20px;
+    }
+
+    li,
+    ul {
+      list-style: none;
+      margin: 10px;
+    }
+
+    input[type="button"] {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="" id="formulario">
+    <input type="number" name="texto" id="entrada" min="1" max="100" placeholder="1-100" />
+    <input type="button" id="boton" value="Calcular" />
+    <input type="button" id="boton2" value="CalcModoTexto" />
+  </form>
+  <div id="cuerpoPiramide">
+    <div id="parrafoSolucion"></div>
+    <div id="solucionTexto"></div>
+  </div>
+</body>
+<script type="text/javascript">
+
+  //Función calcula la piramide
+  function piramide() {
+
+    let numero = document.getElementById("entrada").value; //Toma el valor del campo del formulario
+
+    const parrafoSolucion = document.getElementById("parrafoSolucion");
+    eliminar(); //Elimino los datos de anteriores ejecuciones
+
+    for (var i = 1; i <= numero; i++) { //Cada una de las líneas
+      //Crear un nodo de tipo Element parrafo
+      let parrafo = document.createElement("div");
+      parrafo.setAttribute('class', "seccion");
+
+      for (var j = 1; j <= i; j++) { //Dentro de la línea
+
+        //Crear el nodo de tipo Element. En este caso estamos creando un nodo div
+        let etiqueta = document.createElement("div");
+        etiqueta.setAttribute('class', "caja");
+        //Crear el nodo de tipo TextNode con el valor de la nota introducido en el cuadro de texto
+        let nodoTexto = document.createTextNode(j);
+        //Añadir todos los nodos creados al nodo etiqueta (de tipo div). Por lo tanto estamos creando
+        //una relación de parentesco de hermanos y el nodo padre es el nodo etiqueta
+
+        etiqueta.appendChild(nodoTexto);
+        parrafo.appendChild(etiqueta);
+
+      }
+      //Añadir el parrafo a parrafoSolucion
+      parrafoSolucion.appendChild(parrafo);
+      //Asignar funcionalidad a cada una de las secciones
+
+      parrafoSolucion.addEventListener("click", eliminarSeccion);
+
+    }
+
+    const cuerpoPiramide = document.getElementById("cuerpoPiramide");
+    //Añadir toda la estructura al cuerpoPiramide
+    cuerpoPiramide.appendChild(parrafoSolucion);
+    numero = ""; //Vacío el campo de texto
+  }
+
+  //Elimina todos los hijos, es decir la pirámide completa
+  const eliminar = (evt) => {
+    //Hace referencia al padre del botón Eliminar que es el div que lo contiene
+    const nodoAeliminar = document.getElementById("parrafoSolucion");
+    if (nodoAeliminar) {
+      while (nodoAeliminar.firstChild) {
+        nodoAeliminar.removeChild(nodoAeliminar.firstChild);
+      }
+    }
+  };
+
+  //Elimina cada una de las filas de la piramide
+  const eliminarSeccion = (evt) => {
+
+    //Hace referencia al padre del botón Eliminar que es el div que lo contiene
+    const nodoAeliminar = evt.target;
+    const padre = nodoAeliminar.parentNode;
+    
+    if (padre) {
+      //padre.removeChild(nodoAeliminar); Con esta instrucción elimino uno a uno los nodos 
+      const abuelo = padre.parentNode;
+      abuelo.removeChild(padre); //Elimino toda la fila
+      //Otra forma de eliminar toda la fila, eliminado a todos sus hijos
+     /* while (padre.firstChild) {//Elimina todos los hijos 
+        padre.removeChild(padre.firstChild);
+      }*/
+    }
+
+  };
+
+  //Funcionalidad del apartado 2
+  function piramideTexto() {
+    let numero = document.getElementById("entrada").value //Toma el valor del campo del formulario
+    const parrafoSolucion = document.getElementById("solucionTexto");
+    parrafoSolucion.innerHTML = ""; //Elimino los datos de anteriores ejecuciones
+    
+    for (var i = 1; i <= numero; i++) { //Cada una de las líneas
+      var linea = "";
+      for (var j = 1; j <= i; j++) { //Dentro de la línea
+        linea += j + " ";
+      }
+      parrafoSolucion.insertAdjacentHTML("beforeend", linea + "<br/>"); //Escribo el resultado de esa línea
+    }
+    numero = ""; //Vacío el campo de texto
+  }
+
+
+  //Poner a la escucha el botón una vez que tenemos la seguridad que se ha creado la estructura DOM
+  //asociado al evento onload.
+
+  window.onload = function () {
+    document.getElementById("boton").addEventListener("click", piramide);
+    document.getElementById("boton2").addEventListener("click", piramideTexto);
+  };
+</script>
+
+</html>

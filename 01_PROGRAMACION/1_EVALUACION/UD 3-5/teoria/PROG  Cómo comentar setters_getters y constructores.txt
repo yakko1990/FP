@@ -1,0 +1,20 @@
+Cómo comentar setters/getters y constructores
+
+Frase estándar para comentar un set:
+
+Establece el valor de la propiedad nombreDeLaPropiedad.
+
+
+Frase estándar para comentar un get:
+
+Devuelve el valor de la propiedad nombreDeLaPropiedad.
+
+
+Si alguno de los dos realiza alguna comprobación o acción a mayores también debe ser descrito.
+
+
+Para comentar un constructor, si este simplemente inicializa propiedades a parámetros se pondría algo así:
+
+Inicializa propiedades a los parámetros.
+
+Si no se le pasan parámetros o hace más tareas, hay que describir brevemente como son las inicializaciones y /o las tarea.

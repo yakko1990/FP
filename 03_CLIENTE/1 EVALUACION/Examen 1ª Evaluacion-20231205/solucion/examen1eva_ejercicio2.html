@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 1</title>
+    <style>
+      .claseVerano {
+        background: rgb(236, 160, 29);
+        color: white;
+        font-size: 20px;
+      }
+      .claseInvierno {
+        background: rgb(8, 156, 235);
+        color: white;
+        font-size: 20px;
+      }
+      .claseOtoño {
+        background: rgb(93, 37, 2);
+        color: white;
+        font-size: 20px;
+      }
+      .clasePrimavera {
+        background: rgb(187, 42, 156);
+        color: white;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form name="formulario">
+      <input type="date" name="fecha" />
+      <input type="button" name="boton" id="botonEstacion" value="Estación" />
+      <input
+        type="button"
+        name="botonVentana"
+        id="botonVentana"
+        value="Abrir Ventana"
+      />
+    </form>
+    <p id="resultado"></p>
+  </body>
+  <script type="text/javascript">
+    //Declaro estas variables globales para que puedan ser accedidas desde las funciones
+    let estacionTexto = "";
+    let ventana = null;
+    let cadenaFecha;
+    let clase;
+    let fecha;
+    let parrafoEstacion;
+
+    const abrirVentana = () => {
+      //Crear la variable opciones con todas las opciones que va a tener la ventana nueva
+      let opciones = `scrollbars=no,resizable=no,status=no,
+    location=no,toolbar=no,menubar=no,
+    width=600,height=300,left=100,top=100`;
+
+      //Comprobar que la ventana no está abierta, para que no siga abriendo varias ventanas.
+      if (ventana != null) ventana.close();
+
+      ventana = window.open("", "Ventana Estacion", opciones);
+
+      //Escribir en la nueva ventana
+      ventana.document.write(estacionTexto);
+      //Escribir en la nueva ventana con un nodo
+
+      let h1Ventana = ventana.document.createElement("h1");
+
+      //h1.setAttribute("background-color", "#FF00FF");
+      //h1.setAttribute("color","white");
+
+      h1Ventana.removeAttribute(h1Ventana);
+      //Asignar estilos
+
+      h1Ventana.setAttribute("class", clase);
+
+      h1Ventana.innerHTML = `${fecha.getDay()}/${fecha.getMonth() + 1}/${fecha.getFullYear()} <span> ${estacionTexto}</span>`;
+      ventana.document.body.append(h1Ventana);
+    };
+
+    const estacion = () => {
+      cadenaFecha = document.formulario.fecha.value;
+
+      //Otra forma de acceder al cuadro Fecha para obtener dicho dato
+      //const cuadroFecha=document.querySelector("input");
+      //cadenaFecha=cuadroFecha.value;
+      console.log(cadenaFecha);
+
+      if (cadenaFecha != "") {
+        //Asegurarse que el usuario introduce una fecha
+        //Limpiar el valor del resultado
+        document.getElementById("resultado").innerHTML = "";
+
+        //Borrar el hijo creado dentro del div parrafoEstacion para que cada vez que cambiemos de fecha, sólo muestre la
+        //última estación
+
+        if (parrafoEstacion.firstChild)
+          parrafoEstacion.removeChild(parrafoEstacion.firstChild);
+
+        //Activar el botón Ventana
+        document.formulario.botonVentana.disabled = false;
+
+        //Activar el botón Ventana accediendo al elemento a través de los métodos DOM. Para ello debemos
+        //volver a hacer botonV variable global y a continuación
+        //botonV.disabled=false;
+
+        let fArray = cadenaFecha.split("-"); //Convierto la cadena en un Array utilizando el separador guión
+        //Creo un objeto de tipo fecha con los valores del cuadro de texto
+        fecha = new Date(fArray[0], fArray[1] - 1, fArray[2]);
+
+        const equinoccioPrimavera = new Date(fArray[0], 2, 21);
+        const solsticioVerano = new Date(fArray[0], 5, 21);
+        const equinoccioOtono = new Date(fArray[0], 8, 21);
+        const solsticioInvierno = new Date(fArray[0], 11, 21);
+
+        switch (true) {
+          case fecha >= solsticioInvierno || fecha < equinoccioPrimavera:
+            estacionTexto = "Invierno";
+            clase = "claseInvierno";
+            break;
+          case fecha >= equinoccioPrimavera && fecha < solsticioVerano:
+            estacionTexto = "Primavera";
+            clase = "clasePrimavera";
+            break;
+          case fecha >= solsticioVerano && fecha < equinoccioOtono:
+            estacionTexto = "Verano";
+            clase = "claseVerano";
+            break;
+          case fecha >= equinoccioOtono && fecha < solsticioInvierno:
+            estacionTexto = "Otoño";
+            clase = "claseOtoño";
+        }
+
+        document.getElementById("resultado").innerHTML = estacionTexto;
+
+        //Escribir en la nueva ventana con un nodo
+
+        let h1 = document.createElement("h1");
+        h1.removeAttribute(h1);
+        //Asignar estilos
+
+        h1.setAttribute("class", clase);
+        h1.innerHTML = `${fecha.getDay()}/${
+          fecha.getMonth() + 1
+        }/${fecha.getFullYear()} <span> ${estacionTexto}</span>`;
+        //Añado la estación, que está en un elemento h1 al div creado para mostrar los datos.
+        parrafoEstacion.append(h1);
+        document.body.appendChild(parrafoEstacion);
+      }
+    };
+
+    window.onload = function () {
+      //Desactivar el boton botonVentana
+      //document.formulario.botonVentana.disabled = true;
+      //document.formulario.boton.addEventListener("click", estacion);
+      //document.formulario.botonVentana.addEventListener("click", abrirVentana);
+
+      //Crear la sección para mostrar los datos
+      parrafoEstacion = document.createElement("div");
+      console.log(parrafoEstacion);
+      //Otra forma
+      //Acceder al botón Ventana
+      const botonV = document.getElementById("botonVentana");
+      botonV.disabled = true;
+      botonV.addEventListener("click", abrirVentana);
+
+      //Acceder al botón Estación
+      const botonE = document.getElementById("botonEstacion");
+      botonE.addEventListener("click", estacion);
+    };
+  </script>
+</html>

@@ -1,0 +1,31 @@
+//1. Ejercicio 1: Utilizando todas las formas de asignación de eventos, crea un
+botón que esconda un texto y otro que lo muestre.
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 1 practica 9</title>
+</head>
+<body>
+    <p id="texto"> Este es el texto</p>
+    <button id="botone"> Esconder </button>
+    <br><br>
+    <button id="botonm"> Mostrar </button>
+    <script>
+        window.onload = function(){
+            let texto = document.getElementById("texto")
+            document.getElementById("botone").addEventListener("click", esconder) 
+                function esconder(){
+                    texto.style.display = "none";
+                }
+            
+            document.getElementById("botonm").onclick = function(){
+               texto.style.display = "block";
+            }
+        }
+    </script>
+    
+</body>
+</html>

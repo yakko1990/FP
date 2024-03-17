@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejercicio 2</title>
+  <style type="text/css">
+    .caja {
+      width: 20px;
+      height: 20px;
+      float: left;
+      margin: 5px;
+      background: rgb(74, 74, 75);
+      bottom: auto;
+      color: white;
+      display: flex;
+      align-items: center;
+      /*Alinear verticalmente con flex*/
+      justify-content: center;
+      /*Alinear horizontalmente con flex*/
+      font-size: 20px;
+    }
+
+    .seccion {
+      width: 400px;
+      height: 10px;
+      margin: 20px;
+    }
+
+    li,
+    ul {
+      list-style: none;
+      margin: 10px;
+    }
+
+    input[type="button"] {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="" id="formulario">
+    <input type="number" name="texto" id="entrada" min="1" max="100" placeholder="1-100" />
+    <input type="button" id="boton" value="Calcular" />
+    <input type="button" id="boton2" value="CalcModoTexto" />
+  </form>
+  <div id="cuerpoPiramide">
+    <div id="parrafoSolucion"></div>
+    <div id="solucionTexto"></div>
+  </div>
+</body>
+<script src="app.js"></script>
+
+</html>
+

@@ -1,0 +1,31 @@
+Se desea implementar una aplicación para gestionar una empresa de alquiler de vehículos. Se almacenará información sobre:
+* Clientes: registrando su nif, nombre y apellidos.
+* Vehiculos: se registrará su matrícula, marca, modelo, color y tarifa. Existirán 3 tipos de vehículos: Turismo, Furgoneta y Deportivo. Para el primer tipo se necesitará almacenar el número de puertas y si es automático. Para las furgonetas será necesario conocer su carga y su volumen. Por último, para los deportivos, necesitaremos conocer su cilindrada.
+* El alquiler de un vehículo: almacenando una referencia al cliente que lo alquila, y los datos del vehículo alquilado. Además, se registrarán el día, mes, año y el número de días que estará el vehículo en alquiler.
+
+-------------------------------------------------
+Implementar en Java la siguiente jerarquía:
+ * Empleado: contendrá la siguiente información: nombre, salario, fecha incorporación
+ * De la clase Empleado heredarán la clase Directivo, que contendrá, además de los atributos de su clase base, los atributos propios cargo y departamento; y la clase Operario, con su atributo propio área y nave.
+ * A su vez, las clases Oficial (atributo propio línea de fabricación) y Técnico (atributo propio sección), serán descendientes de la clase Operario.
+ * Todas las clases contendrán un método toString() para mostrar su información.
+
+En el main, crear un array de 7 elementos, que contenga empleados de todos los tipos y, posteriormente mostrar su información por pantalla. 
+-------------------------------------------------
+Codifica la jerarquía ser vivo, animal y vegetal, creando las estructuras que consideres necesario para almacenar de cada elemento, como mínimo nombre científico y nombre común. Para los animales almacenar peso y altura. Para los vegetales únicamente altura. Cada ser vivo se alimentará de una manera diferente, por lo que deberá reflejar este aspecto de alguna forma.
+-------------------------------------------------
+Supón que tu empresa se va a hacer cargo del desarrollo de un programa para el manejo de maquinaria de un fabricante. Las máquinas podrán ser de tipo industrial o bien de tipo doméstico. Independientemente de su tipo, desde el programa debe poderse manejar información relativa al número de serie de cada una, modelo y horas de funcionamiento. Todas las máquinas, como mínimo, deberán poderse encender y apagar, pero obviamente cada una lo hará de una forma concreta debido a sus características internas. Para toda la maquinaria industrial, además, deberá poderse conocer la potencia de consumo.
+-------------------------------------------------
+INTERFACES
+Se va a implementar una aplicación de gestión de vehículos. Los vehículos podrán ser de 2 tipos: Turismo y Motocicleta. Ambos tendrán como funcionalidad acelerar y frenar (que recibirán como parámetro la velocidad a sumar a la actual), pero cada uno, evidentemente, lo hará de manera diferente. También contarán ambos con una velocidad máxima de 120km/h, a determinar en una constante. 
+En el programa ejecutable se deberán generar 4 vehículos, y probar los métodos de aceleración y frenado.
+-------------------------------------------------
+Declara una clase Legislador que contenga como atributos:
+- provinciaRepresentada (String) 
+- camara
+- Si es nacional o no
+- años de residencia
+y que también almacene los datos correspondientes a la clase Persona (atributos DNI, nombre, apellidos, edad).
+En dicha clase, deberá existir un método getCamaraEnQueTrabaja común a todos los tipos de Legisladores (Senador y Diputado) aunque específico para cada tipo.
+Diputado y Senador no tendrán ningún datos propio que almacenar, pero sí implementarán el método getCamaraEnQueTrabaja .
+Crea una lista de legisladores y muestra por pantalla la cámara en que trabajan haciendo uso del polimorfismo.

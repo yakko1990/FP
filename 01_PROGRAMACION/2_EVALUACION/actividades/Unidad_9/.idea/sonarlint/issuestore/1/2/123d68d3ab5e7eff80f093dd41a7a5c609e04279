@@ -1,0 +1,10 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ò¶µ¬øÿÿÿÿ8–üå´ß1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò­¯8–üå´ß1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(»ÀÂ¬üÿÿÿÿ8–üå´ß1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(úØûÅ8–üå´ß1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(İğè8–üå´ß1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô³ó«ıÿÿÿÿ8—üå´ß1
+
+java:S1130"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ò¶µ¬øÿÿÿÿ8ÆÊæ´ß1
+L	java:S106"+Replace this use of System.out by a logger.(ÆñÄöıÿÿÿÿ8›üå´ß1

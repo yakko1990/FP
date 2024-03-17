@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Delegación</title>
+</head>
+<body>
+	<form name="formulario">
+		<input type="button" value="Uno"/>
+		<input type="button" value="Dos"/>
+		<input type="button" value="Tres"/>
+		<input type="button" value="Cuatro"/>
+		<input type="button" value="Cinco"/>
+	</form>
+	<p id="salida"></p>
+</body>
+<script type="text/javascript">
+	function detecta(evento) {
+		var salida = document.getElementById("salida");
+		salida.innerHTML = "El botón que ha provocado el evento es " + evento.target.value;
+	}
+
+	window.onload = function() {
+		document.formulario.addEventListener("click",detecta);
+	}
+</script>
+</html>

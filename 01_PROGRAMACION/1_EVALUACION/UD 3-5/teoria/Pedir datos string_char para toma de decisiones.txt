@@ -1,0 +1,54 @@
+Pedir datos string/char para toma de decisiones
+
+En ocasiones se nos plantea que la respuesta de un usuario es un carácter o una cadena de caracteres y a partir de la misma debemos tomar una decisión. 
+Veamos como se solventaría esto con un par de ejemplos.
+
+En el primer caso pedimos una cadena y comparamos tal y como se vio en teoría, usando equals() o incluso mejor, equalsIgnoreCase() para evitar tener que 
+comparar minúsculas por un lado y mayúsculas por otro:
+
+String respuesta;
+
+do {
+
+ //Código de interés
+
+ System.out.println("¿Desea salir (S/N)?");
+
+ respuesta= sc.nextLine();
+
+ if(!respuesta.equalsIgnoreCase("N")&& !respuesta.equalsIgnoreCase("S"))
+
+ System.out.println("Respuesta no válida");
+
+} while(!respuesta.equalsIgnoreCase("S"));
+
+System.out.println("Programa finalizado");
+
+
+En el caso de tener que convertir a carácter por necesidad podemos quedarnos con el carácter de la primera posición (posición 0) de la cadena mediante 
+el comando characterAt(posición). Este es el ejemplo:
+
+String respuesta;
+
+char letra;  
+
+do {
+
+ //Código de interés
+
+ System.out.println("¿Desea salir (S/N)?");
+
+ respuesta = sc.nextLine().toUpperCase();
+
+ letra = respuesta.charAt(0);
+
+ if (letra!='N' && letra!='S')
+
+ System.out.println("Respuesta no válida");
+
+} while(letra!='S');
+
+ 
+
+System.out.println("Programa finalizado");
+

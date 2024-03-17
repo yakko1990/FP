@@ -1,0 +1,42 @@
+form {
+
+    font-family: Verdana, Arial, sans-serif;
+    margin: auto;
+    background: rgb(6, 105, 204);
+    color: white;
+    font-size: 14px;
+    padding: 30px;
+    width: 450px;
+
+
+}
+
+input {
+    font-size: 14px;
+    background: white;
+    border: solid 1px LightSteelBlue;
+    border-radius: 3px;
+    float: right;
+    margin-right: 100px;
+    width: 50px;
+}
+
+button{
+    font-size: 14px;
+    background: white;
+    border: solid 1px LightSteelBlue;
+    border-radius: 3px;
+    
+}
+
+
+
+ul li {
+    line-height: 25px;
+    list-style: none;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}

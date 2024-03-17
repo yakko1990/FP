@@ -1,0 +1,9 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô³ó«ıÿÿÿÿ8­Õˆ´ß1
+k	java:S116"ORename this field "PLUS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ‰ü¯8®Õˆ´ß1
+>
+java:S1170"!Make this final field static too.(œ‰ü¯8¯Õˆ´ß1
+j
+java:S1845/"MRename method "plus" to prevent any misunderstanding/clash with field "PLUS".(±å’8¯Õˆ´ß1
+V
+java:S5993	"9Change the visibility of this constructor to "protected".(…‹ñ8¯Õˆ´ß1

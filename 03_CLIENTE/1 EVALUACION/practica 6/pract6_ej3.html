@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ejercicio 2</title>
+  <style type="text/css">
+    #cuerpoNotas div {
+      border: 1px solid black;
+      margin: 10px;
+      padding: 5px;
+      width: 300px;
+    }
+
+    input[type="button"] {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="" id="formulario">
+    <input type="number" id="nota" />
+    <input type="button" id="boton" value="Añadir nota" />
+  </form>
+  <div id="cuerpoNotas"></div>
+</body>
+<script type="text/javascript">
+  
+  //Función que elimina la capa con la nota y los botones
+
+  const eliminar = (evt) => {
+
+    let nodoAeliminar=evt.target.parentNode; //Hace referencia al padre del botón Eliminar que es el div que lo contiene
+    nodoAeliminar.parentNode.removeChild(nodoAeliminar);
+  };
+
+  const abajo = (evt) => {
+    let nota = evt.target; //Hace referencia al botón 
+    let padreDiv=nota.parentNode;
+
+    //Se puede realizar de las dos formas la comentada y la que aparece a continuación
+    //document.getElementById("cuerpoNotas").appendChild(nota);
+    padreDiv.parentNode.appendChild(padreDiv);
+  };
+
+  const arriba = (evt) => {
+
+    //Cuando una función es usada como un controlador de eventos, su this hace referencia al elemento del evento disparado 
+    //Una función flecha no permite utilizar la palabra reservada this, por lo que accedemos el elemento sobre el que se ha
+    //disparado el evento a través de su target
+
+
+    console.log(evt.target); //Muestra el botón sobre el que se hace clic
+
+    let nota = evt.target;
+
+    console.log(nota.parentNode); //Muestra el elemento padre que es el div en el que está contenido el botón
+    let padreNotas = nota.parentNode; //Muestra el padre del div para poder insertarlo al principio de todo
+
+    let notas = document.getElementById("cuerpoNotas");
+    console.log(notas);
+
+    notas.insertBefore(padreNotas, notas.firstChild);
+
+
+  };
+
+  //En la función añadir lo que se hace es crear la estructura de nodos. Dependiendo de la relación de parentesco
+  //que se cree, podremos eliminar o mover el conjunto de elementos
+
+  const anhadir = () => {
+    //Obtener la nota que vamos a mostrar
+
+    let notaT = document.getElementById("nota").value;
+    //Crear el nodo de tipo Element. En este caso estamos creando un nodo div
+    let etiqueta = document.createElement("div");
+    //Crear el nodo de tipo TextNode con el valor de la nota introducido en el cuadro de texto
+    let nodoTexto = document.createTextNode(notaT);
+
+    //A continuación creamos el resto de nodos, los botones.
+
+    //Crear el botón Eliminar
+    let botonEliminar = document.createElement("input");
+    botonEliminar.value = "Eliminar";
+    botonEliminar.type = "button";
+    //Poner el botón Eliminar a la escucha del evento
+    botonEliminar.addEventListener("click", eliminar);
+
+    //Crear el botón Arriba
+    let botonArriba = document.createElement("input");
+    botonArriba.value = "Arriba";
+    botonArriba.type = "button";
+    //Poner el botón Arriba a la escucha del evento
+    botonArriba.addEventListener("click", arriba);
+
+    //Crear el botón Abajo
+    let botonAbajo = document.createElement("input");
+    botonAbajo.value = "Abajo";
+    botonAbajo.type = "button";
+    //Poner el botón Abajo a la escucha del evento
+    botonAbajo.addEventListener("click", abajo);
+
+    //Añadir todos los nodos creados al nodo etiqueta (de tipo div). Por lo tanto estamos creando
+    //una relación de parentesco de hermanos y el nodo padre es el nodo etiqueta
+
+    etiqueta.appendChild(nodoTexto);
+    etiqueta.appendChild(botonEliminar);
+    etiqueta.appendChild(botonArriba);
+    etiqueta.appendChild(botonAbajo);
+
+    //Añadir el conjunto de nodos creados al div   <div id="cuerpoNotas"></div>
+
+
+    const cuerpoNotas = document.getElementById("cuerpoNotas");
+    console.log("Cuerpo notas" + cuerpoNotas);
+    cuerpoNotas.appendChild(etiqueta);
+  };
+
+  //Poner a la escucha el botón una vez que tenemos la seguridad que se ha creado la estructura DOM
+  //asociado al evento onload.
+
+  window.onload = function () {
+    document.getElementById("boton").addEventListener("click", anhadir);
+  };
+</script>
+
+</html>

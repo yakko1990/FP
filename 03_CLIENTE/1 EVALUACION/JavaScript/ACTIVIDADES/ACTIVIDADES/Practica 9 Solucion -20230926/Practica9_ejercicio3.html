@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+</head>
+<body>
+	<form name=formulario>
+		<input type="date" name="fecha"/>
+		<input type="button" name="boton" value="Estación"/>
+	</form>
+	<p id="resultado"></p>
+</body>
+<script type="text/javascript">
+	function estacion() {
+		var fecha=("02 11 2019");
+		console.log(fecha);
+		var fechaA=new Date(fecha);
+		console.log(fechaA);
+		var cadenaFecha = document.formulario.fecha.value;
+		var fArray = cadenaFecha.split("-"); //Convierto la cadena en un Array utilizando el separador guión
+        var fecha = new Date(fArray[0], fArray[1] - 1, fArray[2]);
+        //var anhonuevo = new Date(fArray[0],0,1);
+		
+		var equinoccioPrimavera = new Date(fArray[0],2,21);
+		var solsticioVerano = new Date(fArray[0],5,21);
+		var equinoccioOtono = new Date(fArray[0],8,21);
+		var solsticioInvierno = new Date(fArray[0],11,21);
+		
+		switch (true) {
+			case ((fecha >= solsticioInvierno) || (fecha < equinoccioPrimavera)):
+			document.getElementById("resultado").innerHTML = "invierno";
+			break;
+			case ((fecha >= equinoccioPrimavera) && (fecha < solsticioVerano)):
+			document.getElementById("resultado").innerHTML = "primavera";
+			break;
+			case ((fecha >= solsticioVerano) && (fecha < equinoccioOtono)):
+			document.getElementById("resultado").innerHTML = "verano";
+			break;
+			case ((fecha >= equinoccioOtono) && (fecha < solsticioInvierno)):
+			document.getElementById("resultado").innerHTML = "otoño";
+		}
+	}
+
+	window.onload = function() {
+		document.formulario.boton.addEventListener("click",estacion)
+	}
+</script>
+</html>

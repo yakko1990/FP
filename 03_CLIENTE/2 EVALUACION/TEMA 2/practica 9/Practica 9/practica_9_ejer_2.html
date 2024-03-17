@@ -1,0 +1,45 @@
+<!-- 2. Ejercicio  2.  Modifica el ejercicio anterior y en la opción de  detectores de
+eventos, cambia el botón para que esconda/muestre el texto. Añade otro
+botón que desactive el primero. -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 2 practica 9</title>
+</head>
+<body>
+    <p id="texto"> Este es el texto</p>
+    <button id="botone"> Esconder/mostrar </button>
+    <br><br>
+    <button id="botonc"> Cancelar comportamiento </button>
+    <script>
+        window.onload = function(){
+            let botone = document.getElementById("botone");
+            botone.addEventListener("click", esconderMostrar);
+
+            let texto = document.getElementById("texto");
+            function esconderMostrar(){
+                if (texto.style.display === "none") {
+                    texto.style.display = "";
+                } else {
+                    texto.style.display = "none";
+                }
+            }
+
+            document.getElementById("botonc").addEventListener("click", cancelarComportamiento);
+
+            function cancelarComportamiento(){
+                botone.disabled = true;   // removeEventListener(evento, funcion);
+            }
+
+
+            
+        }
+           
+    </script>
+    
+</body>
+</html>

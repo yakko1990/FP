@@ -1,0 +1,48 @@
+#documento {
+            
+    font-family: Verdana, Arial, sans-serif;
+    margin:auto;
+    background: SlateGray;
+    color: white;
+    font-size: 14px;
+    padding: 30px;
+    width: 450px;
+    
+    
+}
+
+input{
+    font-size:14px;
+    background: white;
+    border:solid 1px LightSteelBlue;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.cuadro{
+    float: right;
+    margin-right: 100px;
+    width: 50px;
+}
+ol li {
+    line-height: 25px;
+    list-style: none;
+}
+.boton {
+    text-align: center;  
+    margin-left: 20px;
+}
+.boton:enabled {
+    color: #2b2;
+  }
+  
+.boton:disabled {
+    color: #aaa;
+  }
+
+fieldset{
+   align-self: auto;
+}
+p{
+    text-align: center;
+}

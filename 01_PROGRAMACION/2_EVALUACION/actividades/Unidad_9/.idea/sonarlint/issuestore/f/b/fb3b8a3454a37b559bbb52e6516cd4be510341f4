@@ -1,0 +1,26 @@
+
+g	java:S112i"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ä“˜µß1
+h
+java:S1301?"KReplace this "switch" statement by "if" statements to increase readability.(°€àâ8Å“˜µß1
+}
+java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "empleado".(ÅÄüï8Å“˜µß1
+‚
+java:S1488$"`Immediately return this expression instead of assigning it to the temporary variable "empleado".(ÓƒÙşûÿÿÿÿ8Å“˜µß1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ô³ó«ıÿÿÿÿ8Æ“˜µß1
+8
+java:S1165"Make this "sc" field final.(ÆÏ÷Ï8ª”˜µß1
+F	java:S106)"+Replace this use of System.out by a logger.(§µ‰	8®”˜µß1
+G	java:S106<"+Replace this use of System.out by a logger.(ù¨¥ú8°”˜µß1
+>	java:S131?""Add a default case to this switch.(°€àâ8°”˜µß1
+G	java:S106C"+Replace this use of System.out by a logger.(ÇÔŠÕ8¶”˜µß1
+L	java:S106D"+Replace this use of System.out by a logger.(œÕíÌùÿÿÿÿ8¶”˜µß1
+F	java:S106J"+Replace this use of System.out by a logger.(°ƒ8·”˜µß1
+L	java:S106L"+Replace this use of System.out by a logger.(¢ÈÕ¦üÿÿÿÿ8·”˜µß1
+L	java:S106N"+Replace this use of System.out by a logger.(ÛßÅüÿÿÿÿ8·”˜µß1
+L	java:S106P"+Replace this use of System.out by a logger.(ññîşÿÿÿÿ8·”˜µß1
+G	java:S106W"+Replace this use of System.out by a logger.(äğİÿ8·”˜µß1
+G	java:S106Y"+Replace this use of System.out by a logger.(ƒ£±º8¸”˜µß1
+L	java:S106["+Replace this use of System.out by a logger.(ÛßÅüÿÿÿÿ8¸”˜µß1
+L	java:S106]"+Replace this use of System.out by a logger.(ññîşÿÿÿÿ8¸”˜µß1
+G	java:S106e"+Replace this use of System.out by a logger.(ù“‹¥8¸”˜µß1
+L	java:S106n"+Replace this use of System.out by a logger.(÷×ãÔùÿÿÿÿ8¹”˜µß1

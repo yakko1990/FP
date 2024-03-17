@@ -1,0 +1,172 @@
+Crea una clase Cuenta que tendrá los siguientes atributos: 
+titular
+cantidad (puede tener decimales).
+
+El titular será obligatorio y la cantidad opcional. 
+Crea dos constructores que cumpla lo anterior.
+
+Crea sus métodos get, set y toString.
+
+Tendrá dos métodos especiales:
+
+ingresar(double cantidad): se ingresa una cantidad a la cuenta, si la cantidad introducida es negativa, no se hará nada.
+retirar(double cantidad): se retira una cantidad a la cuenta, si restando la cantidad actual a la que nos pasan es negativa, la cantidad de la cuenta pasa a ser 0.
+
+-------------------------------------------------
+Vamos a crear una clase Titular. 
+Atributos: nombre, fecha de nacimiento, DNI, sexo y direccion. Asignar valores por defecto a todos los atributos según su tipo.
+ * Sexo será hombre por defecto, se deberá usar una constante para ello.
+ 
+Constructores:
+ * Uno por defecto.
+ * Uno que reciba nombre, fecha de nacimiento y sexo, resto por defecto.
+ * Otro con todos los atributos como parámetro.
+Métodos:
+ * boolean esMayorDeEdad()
+  * void comprobarSexo(char sexo): comprueba que el sexo introducido sea correcto.Si es incorrecto, asignará H.
+ * toString()
+
+A continuación, sustituye en la clase Cuenta todas las referencias al titular, para que, en vez de 
+gestionar sus datos a través de atributos, lo realice mediante un objeto de tipo Titular.
+
+-------------------------------------------------
+Implementa una clase consumo, la cual forma parte de la centralita electrónica de un coche y tiene las siguientes características:
+?? Atributos:
+– kms. Kilómetros recorridos por el coche.
+– litros. Litros de combustible consumido.
+– vmed. Velocidad media.
+– pgas. Precio de la gasolina.
+?? Métodos: 
+– getTiempo. Indicará el tiempo empleado en realizar el viaje.
+– consumoMedio. Consumo medio del vehículo (en litros cada 100 kilómetros).
+– consumoEuros. Consumo medio del vehículo (en euros cada 100 kilómetros).
+No olvides crear un constructor para la clase que establezca el valor de los atributos. Elige el tipo de datos más apropiado para cada atributo.
+
+---------------------------------
+
+Realiza una clase finanzas que convierta dólares a euros y viceversa. Codifica los métodos dolaresToEuros y 
+eurosToDolares. Prueba que dicha clase funciona correctamente haciendo conversiones entre euros y dólares. 
+La clase tiene que tener:
+?? Un constructor finanzas() por defecto, el cual establecerá el cambio Dólar-Euro en 1.36. 
+?? Un constructor finanzas(double), el cual permitirá configurar el cambio dólar-euro. 
+
+---------------------------------
+Crea la clase peso, la cual tendrá las siguientes 
+características:
+?? Deberá tener un atributo donde se almacene 
+el peso de un objeto en kilogramos.
+?? En el constructor se le pasará el peso y 
+la medida en la que se ha tomado (‘Lb’ para libras, 
+‘Li’ para lingotes, ‘Oz’ para onzas, ‘P’ para peniques, 
+‘K’ para kilos, ‘G’ para gramos y ‘Q’ para quintales).
+?? Deberá de tener los siguientes métodos:
+– getLibras. Devuelve el peso en libras.
+– getLingotes. Devuelve el peso en lingotes.
+– getPeso. Devuelve el peso en la medida que 
+se pase como parámetro (‘Lb’ para libras, ‘Li’ para 
+lingotes, 
+‘Oz’ para onzas, ‘P’ para peniques, ‘K’ para kilos, 
+‘G’ para gramos y ‘Q’ para quintales).
+Para la realización del ejercicio toma como referencia 
+los siguientes datos:
+1 Libra = 16 onzas = 453 gramos. 
+1 Lingote = 32,17 libras = 14,59 kg.
+1 Onza = 0,0625 libras = 28,35 gramos.
+1 Penique = 0,05 onzas = 1,55 gramos.
+1 Quintal = 100 libras = 43,3 kg.
+Crea además un método main para testear y verificar 
+los métodos de esta clase
+
+---------------------------------
+Modifica la clase satélite y añádele los siguientes métodos:
+?? Método void variaAltura(double desplazamiento): Este método acepta un parámetro que será positivo o negativo dependiendo de si el satélite tiene que alejarse o acercarse a La Tierra.
+?? Método boolean enOrbita(): Este método devolverá false si el satélite está en tierra, y true en caso contrario.
+?? Método void variaPosicion(double variap, double variam): Este método permite modificar los atributos de posición (meridiano y paralelo) mediante los parámetros variap y variam. Estos parámetros serán valores positivos o negativos relativos que harán al satélite modificar su posición. 
+
+-------------------------------------------------
+El restaurante mejicano de Israel cuya especialidad son las papas con chocos nos pide diseñar un método con el que se pueda saber cuántos clientes pueden atender con la materia prima que tienen en el almacén. El método recibe la cantidad de papas y chocos en kilos y devuelve el número de clientes que puede atender el restaurante teniendo en cuenta que por cada tres personas, Israel utiliza un kilo de papas y medio de chocos
+
+-------------------------------------------------
+Tenemos la siguiente clase:
+public abstract class sorteo{
+protected int posibilidades;
+public abstract int lanzar();
+}
+Se pide:
+** Crear la clase dado, la cual desciende de la clase sorteo. La clase dado, en la llamada lanzar() mostrará un número aleatorio del 1 al 6.
+** Crear la clase moneda, la cual desciende de la clase sorteo. Esta clase en la llamada al método lanzar()mostrará las palabras cara o cruz
+
+-------------------------------------------------
+Implementar un programa que represente el consumo de energía de una instalación eléctrica. Existirá una clase genérica "Aparato" que represente los aparatos conectados a la instalación.
+Cada uno de ellos tendrá un consumo eléctrico determinado.
+Al encender un aparato eléctrico, el consumo de energía total se incrementa en la potencia de dicho aparato.
+Al apagarlo, se decrementa el consumo.
+Por defecto, al crearse, los aparatos están todos apagados.
+Deberá poder consultarse el consumo total de la instalación.
+
+-------------------------------------------------
+Crear clase Electrodomestico que contenga:
+Atributos:
+	Precio base
+	Color
+	Consumo energético (letras entre A y F)
+	Peso.
+Por defecto, el color sera blanco, el consumo energético será F, el precioBase 100 € y el peso 5 kg. Los colores disponibles son blanco, negro, rojo, azul y gris.
+Constructores:
+	Uno por defecto.
+	Uno con el precio y peso. El resto por defecto.
+	Uno con todos los atributos.
+Métodos:
+Getters y Setters.
+comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta, si no es correcta usará la letra por defecto. Se invocará al crear el objeto y no será visible.
+comprobarColor(String color): comprueba que el color es correcto, si no lo es usa el color por defecto. Se invocará al crear el objeto y no será visible.
+precioFinal(): según el consumo energético, aumentará su precio de la siguiente manera:
+LETRA	PRECIO
+A	100 €
+B	80 €
+C	60 €
+D	50 €
+E	30 €
+F	10 €
+-------------------------------------------------
+Crear ahora una subclase Lavavajillas:
+Su atributo es numServicios.
+Por defecto, la carga es de 12 servicios. Usa una constante para ello.
+Constructores:
+	Uno por defecto.
+	Uno con el precio y peso. El resto por defecto.
+	Uno con todos los atributos.
+Métodos:
+	Getters y Setters necesarios
+	precioFinal(): si tiene más de 12 servicios, aumentará el precio 60 €. Las condiciones que de la clase padre también deben afectar al precio.
+
+-------------------------------------------------
+Crear una subclase Television:
+
+Atributos:
+	Resolución (en pulgadas). Por defecto será de 32.
+	Sintonizador TDT (booleano). Por defecto será false.
+
+Constructores:
+	Uno por defecto.
+	Uno con el precio y peso. El resto por defecto.
+Un constructor con la resolución, sintonizador TDT y el resto de atributos heredados. Recuerda que debes llamar al constructor de la clase padre.
+Los métodos que se implementara serán:
+Método get de resolución y sintonizador TDT.
+precioFinal(): si tiene una resolución mayor de 40 pulgadas, se incrementara el precio un 30% y si tiene un sintonizador TDT incorporado, aumentará 50 €. Recuerda que las condiciones que hemos visto en la clase Electrodomestico también deben afectar al precio.
+
+-------------------------------------------------
+Ahora crea una clase ejecutable que realice lo siguiente:
+Crea un array de Electrodomesticos de 10 posiciones.
+Asigna a cada posición un objeto de las clases anteriores con los valores que desees.
+Ahora, recorre este array y ejecuta el método precioFinal().
+Deberás mostrar el precio de cada clase, es decir, el precio de todas las televisiones por un lado, el de los lavavajillas por otro y la suma de los Electrodomesticos 
+Por ejemplo, si tenemos un Electrodomestico con un precio final de 300, un lavavajillas de 200 y una televisión de 500, el resultado final sera de 1000 (300+200+500) para electrodomésticos, 200 para lavavajillas y 500 para televisión.
+-------------------------------------------------
+Se va a implementar una aplicación que gestione una universidad. Se almacenarán datos sobre los docentes y sobre los alumnos. Se registrarán los nombres, edad, DNI, sexo, peso y altura de ambos tipos de personas. Para todos ellos, al crear un nuevo objeto, se deberá comprobar si la edad introducida es válida y si es mayor de edad, para poder crear el objeto. Además, se comprobará si el sexo introducido es correcto. Existirá un método mostrarInfo(), que imprimirá por pantalla los datos de cada persona.
+
+Los docentes en concreto tendrán un atributo propio materia, que almacenará la asignatura que éste imparte.
+En el caso de los alumnos, almacenarán de manera específica la escuela en la que estudian (dentro de la universidad) y el grado que cursan.
+Dentro de alumnos, existirá un tipo concreto, que será el alumnado internacional, para los que se almacenará el país del que proceden.
+
+En el programa ejecutable, crea un array de 7 elementos entre los cuales existan elementos de todas las clases implementadas, uno con edad inválida y otro con edad inferior a 18 años. Posteriormente, muestra todos los datos para cada uno de los elementos del array.

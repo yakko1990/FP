@@ -1,0 +1,37 @@
+#campo {
+            
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    height: 500px;
+    width: calc(100% - 20px);
+    background-color:  rgb(148, 245, 245);;
+}
+
+
+#coche1 { 
+    position:absolute;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    left: 10px;
+}
+
+#coche2 {  
+    position:absolute;
+    height: 50px;
+    width: 50px;
+    top: 450px;
+    left: 10px;
+}
+
+#campoBoton{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(89, 94, 94);
+    
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+}

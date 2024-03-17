@@ -1,0 +1,6 @@
+
+8
+java:S1700"Rename field "listaNombres"(´¸ç…8Š‚…•Ü1
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(şÏ²
+L	java:S106"+Replace this use of System.out by a logger.(ŸÄ§ùÿÿÿÿ8˜‚…•Ü1
+G	java:S106."+Replace this use of System.out by a logger.(é¹„8›‚…•Ü1

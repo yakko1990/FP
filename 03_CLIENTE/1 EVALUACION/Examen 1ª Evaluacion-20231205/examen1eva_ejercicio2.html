@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 1</title>
+</head>
+<body>
+	<form name=formulario>
+		<input type="date" name="fecha"/>
+		<input type="button" name="boton" value="Estación"/>
+		
+	</form>
+	<p id="resultado"></p>
+</body>
+<script>
+	'use strict'
+	
+
+		document.querySelector('input[name="boton"]').addEventListener('click', traerFecha)
+
+function traerFecha(){
+	let fecha =document.querySelector('input[name="fecha"]').value 
+	
+	fecha = fecha.split("-")
+	console.log(fecha)
+	
+	fecha = new Date(fecha[0], fecha[1] - 1, fecha[2]);
+        console.log(fecha);
+
+		fecha = parseFloat(fecha)
+		console.log(fecha);
+}
+
+</script>
+</html>

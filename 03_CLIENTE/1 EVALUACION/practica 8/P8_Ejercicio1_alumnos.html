@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario para el nombre del usuario</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+    <!--Estilos a aplicar en el texto introducido
+
+        style.fontFamily - Tipo de letra
+        style.fontSize - Tamaño
+        style.textDecoration 
+        style.fontWeight 
+        style.fontStyle
+        style.fontVarian
+            
+        
+    -->
+    <form name="miFormulario" action="javascript:crearTexto()">
+        <label for="nombre">Nombre</label>
+        <input name="nombre" id="nombre" placeholder="Nombre" required=""/>
+
+        <br/>
+        <label for="color">Color</label><br/>
+
+        <select name="color">
+            <option value="red">Rojo</option>
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+            <option value="black">Negro</option>
+        </select>
+
+        <br/>
+        <label for="fuente">Fuente</label><br/>
+
+        <input type="radio" value="serif" name="fuente" required=""/> Times New Roman <br/>
+        <input type="radio" value="sans-serif" name="fuente"/> Arial <br/>
+        <input type="radio" value="cursive" name="fuente" /> Comic Sans <br/>
+        <input type="radio" value="fantasy" name="fuente" /> Impact<br/>
+        <input type="radio" value="monospace" name="fuente" /> Courier New<br/>
+
+        <br/>
+        <label for="tachado">Efectos</label><br/>
+
+        <input type="checkbox" name="tachado">Tachado
+        <input type="checkbox" name="negrita">Negrita
+        <input type="checkbox" name="cursiva">Cursiva
+        <input type="checkbox" name="versalita">Versalita
+        <input type="checkbox" name="subrayado">Subrayado
+
+        <br/>
+        
+
+        <input type="submit" id="enviar" name="enviar" value="Enviar" />
+    </form>
+    <span id="resultado"></span>
+</body>
+
+</html>

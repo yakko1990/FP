@@ -1,0 +1,36 @@
+    table{      
+    border-collapse: collapse;
+    border: black 1px solid;
+    }
+    tr{
+      
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    height: 100px;
+    }
+    td{
+    border-collapse: collapse;
+    border: black 1px solid;
+    width: 100px;
+    background-color: cyan;
+    text-align:center;
+    
+    }
+    
+    div{
+    visibility:hidden;
+    font-family:Arial;
+    width: 100px;
+    font-size:30;
+    font-weight:bold;
+    text-align:center;
+    }
+    h1{
+        text-align: center;
+    }
+   
+    .container{
+        display: flex;
+        justify-content: center;
+    }

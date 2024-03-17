@@ -1,0 +1,18 @@
+
+.contenedor_boton{
+    display: flex;
+}
+
+.boton{
+    margin:4px;
+    color: #f9f9fc;    
+    background: #3a44a0;   
+    border: 1px solid rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+.boton:hover{
+    color: black;
+    background-color: aliceblue;
+}
+   
+
